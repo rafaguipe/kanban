@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM Pipelines</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app__header">
+        <div>
+          <p class="app__kicker">CRM Nordosudo</p>
+          <h1>Pipelines de Vendas</h1>
+          <p class="app__subtitle">
+            Gerencie seus clientes como no Trello, com três fluxos independentes.
+          </p>
+        </div>
+      </header>
+
+      <section class="metrics">
+        <div class="metric-card">
+          <p>Negócios ativos</p>
+          <h3 id="metric-active">0</h3>
+          <span class="trend neutral" id="metric-active-sub">Atualizado agora</span>
+        </div>
+        <div class="metric-card">
+          <p>Negócios arquivados</p>
+          <h3 id="metric-archived">0</h3>
+          <span class="trend neutral" id="metric-archived-sub">Atualizado agora</span>
+        </div>
+        <div class="metric-card">
+          <p>Cadastros</p>
+          <h3 id="metric-registrations">0</h3>
+          <span class="trend neutral" id="metric-registrations-sub">Empresas &amp; contatos</span>
+        </div>
+      </section>
+
+      <section class="registry">
+        <div class="registry__panel">
+          <header>
+            <div>
+              <h2>Empresas</h2>
+              <p>Cadastre e gerencie empresas vinculadas aos negócios.</p>
+            </div>
+          </header>
+          <form class="registry__form" id="company-form">
+            <input type="text" name="name" placeholder="Nome da empresa" required />
+            <input type="text" name="segment" placeholder="Segmento (opcional)" />
+            <button class="primary" type="submit">Adicionar empresa</button>
+          </form>
+          <ul class="registry__list" id="company-list"></ul>
+        </div>
+        <div class="registry__panel">
+          <header>
+            <div>
+              <h2>Contatos</h2>
+              <p>Registre pessoas de contato para cada empresa.</p>
+            </div>
+          </header>
+          <form class="registry__form" id="contact-form">
+            <input type="text" name="name" placeholder="Nome do contato" required />
+            <input type="email" name="email" placeholder="Email" required />
+            <select name="company" id="contact-company"></select>
+            <button class="primary" type="submit">Adicionar contato</button>
+          </form>
+          <ul class="registry__list" id="contact-list"></ul>
+        </div>
+      </section>
+
+      <section class="pipeline-controls">
+        <label class="switch">
+          <input type="checkbox" id="toggle-archived" />
+          <span>Mostrar negócios arquivados</span>
+        </label>
+      </section>
+
+      <main class="pipelines" id="pipelines"></main>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
