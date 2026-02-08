@@ -29,7 +29,7 @@ body {
 
 .app__header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   gap: 24px;
   margin-bottom: 28px;
@@ -131,6 +131,102 @@ button:active {
 
 .trend.down {
   color: #f04438;
+}
+
+.trend.neutral {
+  color: var(--muted);
+}
+
+.registry {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.registry__panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.registry__panel header h2 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+.registry__panel header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.registry__form {
+  display: grid;
+  gap: 10px;
+}
+
+.registry__form input,
+.registry__form select {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+}
+
+.registry__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.registry__item {
+  background: #f8f8ff;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border: 1px dashed #d9d9ff;
+}
+
+.registry__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+}
+
+.registry__meta span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.pipeline-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.switch input {
+  accent-color: var(--primary);
 }
 
 .pipelines {
@@ -259,6 +355,16 @@ button:active {
   flex-wrap: wrap;
 }
 
+.card__actions {
+  display: flex;
+  gap: 6px;
+}
+
+.card__actions button {
+  padding: 6px 10px;
+  font-size: 11px;
+}
+
 .card__badge {
   font-size: 11px;
   font-weight: 600;
@@ -288,6 +394,11 @@ button:active {
 .card.overdue {
   border-color: #fda29b;
   box-shadow: 0 8px 18px rgba(240, 68, 56, 0.2);
+}
+
+.card.archived {
+  opacity: 0.6;
+  background: #f2f4f7;
 }
 
 .dragging {

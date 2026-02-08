@@ -16,34 +16,69 @@
     <div class="app">
       <header class="app__header">
         <div>
-          <p class="app__kicker">CRM Moderno</p>
+          <p class="app__kicker">CRM Nordosudo</p>
           <h1>Pipelines de Vendas</h1>
           <p class="app__subtitle">
             Gerencie seus clientes como no Trello, com três fluxos independentes.
           </p>
         </div>
-        <div class="app__actions">
-          <button class="ghost">Exportar</button>
-          <button class="primary">Novo Lead</button>
-        </div>
       </header>
 
       <section class="metrics">
         <div class="metric-card">
-          <p>Novos Leads</p>
-          <h3>128</h3>
-          <span class="trend up">+12% essa semana</span>
+          <p>Negócios ativos</p>
+          <h3 id="metric-active">0</h3>
+          <span class="trend neutral" id="metric-active-sub">Atualizado agora</span>
         </div>
         <div class="metric-card">
-          <p>Em negociação</p>
-          <h3>64</h3>
-          <span class="trend up">+5% essa semana</span>
+          <p>Negócios arquivados</p>
+          <h3 id="metric-archived">0</h3>
+          <span class="trend neutral" id="metric-archived-sub">Atualizado agora</span>
         </div>
         <div class="metric-card">
-          <p>Fechados</p>
-          <h3>32</h3>
-          <span class="trend down">-3% essa semana</span>
+          <p>Cadastros</p>
+          <h3 id="metric-registrations">0</h3>
+          <span class="trend neutral" id="metric-registrations-sub">Empresas &amp; contatos</span>
         </div>
+      </section>
+
+      <section class="registry">
+        <div class="registry__panel">
+          <header>
+            <div>
+              <h2>Empresas</h2>
+              <p>Cadastre e gerencie empresas vinculadas aos negócios.</p>
+            </div>
+          </header>
+          <form class="registry__form" id="company-form">
+            <input type="text" name="name" placeholder="Nome da empresa" required />
+            <input type="text" name="segment" placeholder="Segmento (opcional)" />
+            <button class="primary" type="submit">Adicionar empresa</button>
+          </form>
+          <ul class="registry__list" id="company-list"></ul>
+        </div>
+        <div class="registry__panel">
+          <header>
+            <div>
+              <h2>Contatos</h2>
+              <p>Registre pessoas de contato para cada empresa.</p>
+            </div>
+          </header>
+          <form class="registry__form" id="contact-form">
+            <input type="text" name="name" placeholder="Nome do contato" required />
+            <input type="email" name="email" placeholder="Email" required />
+            <select name="company" id="contact-company"></select>
+            <button class="primary" type="submit">Adicionar contato</button>
+          </form>
+          <ul class="registry__list" id="contact-list"></ul>
+        </div>
+      </section>
+
+      <section class="pipeline-controls">
+        <label class="switch">
+          <input type="checkbox" id="toggle-archived" />
+          <span>Mostrar negócios arquivados</span>
+        </label>
       </section>
 
       <main class="pipelines" id="pipelines"></main>
