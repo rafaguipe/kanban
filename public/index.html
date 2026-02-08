@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM Pipelines</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app__header">
+        <div>
+          <p class="app__kicker">CRM Moderno</p>
+          <h1>Pipelines de Vendas</h1>
+          <p class="app__subtitle">
+            Gerencie seus clientes como no Trello, com três fluxos independentes.
+          </p>
+        </div>
+        <div class="app__actions">
+          <button class="ghost">Exportar</button>
+          <button class="primary">Novo Lead</button>
+        </div>
+      </header>
+
+      <section class="metrics">
+        <div class="metric-card">
+          <p>Novos Leads</p>
+          <h3>128</h3>
+          <span class="trend up">+12% essa semana</span>
+        </div>
+        <div class="metric-card">
+          <p>Em negociação</p>
+          <h3>64</h3>
+          <span class="trend up">+5% essa semana</span>
+        </div>
+        <div class="metric-card">
+          <p>Fechados</p>
+          <h3>32</h3>
+          <span class="trend down">-3% essa semana</span>
+        </div>
+      </section>
+
+      <main class="pipelines">
+        <section class="pipeline">
+          <header>
+            <div>
+              <h2>Pipeline: Pré-venda</h2>
+              <p>Leads chegando do marketing</p>
+            </div>
+            <button class="ghost small">+ Etapa</button>
+          </header>
+          <div class="board">
+            <div class="column">
+              <h3>Novos</h3>
+              <div class="card">
+                <h4>Agência Nuvem</h4>
+                <p>Primeiro contato via landing.</p>
+                <span class="tag">Inbound</span>
+              </div>
+              <div class="card">
+                <h4>Studio Orion</h4>
+                <p>Solicitou proposta inicial.</p>
+                <span class="tag">Urgente</span>
+              </div>
+            </div>
+            <div class="column">
+              <h3>Qualificação</h3>
+              <div class="card">
+                <h4>Fazenda Horizonte</h4>
+                <p>Responder questionário de fit.</p>
+                <span class="tag">Análise</span>
+              </div>
+            </div>
+            <div class="column">
+              <h3>Contato feito</h3>
+              <div class="card">
+                <h4>Startup Lumina</h4>
+                <p>Follow-up agendado para sexta.</p>
+                <span class="tag">Follow-up</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="pipeline">
+          <header>
+            <div>
+              <h2>Pipeline: Negociação</h2>
+              <p>Oportunidades com proposta ativa</p>
+            </div>
+            <button class="ghost small">+ Etapa</button>
+          </header>
+          <div class="board">
+            <div class="column">
+              <h3>Proposta enviada</h3>
+              <div class="card">
+                <h4>Grupo Atlântico</h4>
+                <p>Plano premium com 20 usuários.</p>
+                <span class="tag">R$ 18k</span>
+              </div>
+              <div class="card">
+                <h4>Varejo Central</h4>
+                <p>Solicita ajuste de escopo.</p>
+                <span class="tag">Revisão</span>
+              </div>
+            </div>
+            <div class="column">
+              <h3>Reunião</h3>
+              <div class="card">
+                <h4>Conecta+</h4>
+                <p>Demonstração com time técnico.</p>
+                <span class="tag">Demo</span>
+              </div>
+            </div>
+            <div class="column">
+              <h3>Negociação</h3>
+              <div class="card">
+                <h4>Hotel Solis</h4>
+                <p>Negociar prazo de implantação.</p>
+                <span class="tag">Alta prioridade</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="pipeline">
+          <header>
+            <div>
+              <h2>Pipeline: Pós-venda</h2>
+              <p>Onboarding e retenção</p>
+            </div>
+            <button class="ghost small">+ Etapa</button>
+          </header>
+          <div class="board">
+            <div class="column">
+              <h3>Onboarding</h3>
+              <div class="card">
+                <h4>Clínica Vida</h4>
+                <p>Kickoff com equipe na terça.</p>
+                <span class="tag">Onboarding</span>
+              </div>
+            </div>
+            <div class="column">
+              <h3>Ativação</h3>
+              <div class="card">
+                <h4>Logística Alfa</h4>
+                <p>Treinamento finalizado.</p>
+                <span class="tag">Ativo</span>
+              </div>
+              <div class="card">
+                <h4>Rede Prisma</h4>
+                <p>Configurar integrações.</p>
+                <span class="tag">Integração</span>
+              </div>
+            </div>
+            <div class="column">
+              <h3>Sucesso do cliente</h3>
+              <div class="card">
+                <h4>Fábrica Delta</h4>
+                <p>Revisão de QBR agendada.</p>
+                <span class="tag">QBR</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
