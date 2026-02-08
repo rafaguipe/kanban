@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM Pipelines</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app__header">
+        <div>
+          <p class="app__kicker">CRM Nordosudo</p>
+          <h1>Pipelines de Vendas</h1>
+          <p class="app__subtitle">
+            Gerencie seus clientes como no Trello, com três fluxos independentes.
+          </p>
+        </div>
+      </header>
+
+      <nav class="tabs" aria-label="Seções do CRM">
+        <button class="tab-button is-active" data-tab="negocios">Negócios</button>
+        <button class="tab-button" data-tab="empresas">Empresas</button>
+        <button class="tab-button" data-tab="contatos">Contatos</button>
+      </nav>
+
+      <section class="tab-content is-active" data-tab-content="negocios">
+        <section class="metrics">
+          <div class="metric-card">
+            <p>Negócios ativos</p>
+            <h3 id="metric-active">0</h3>
+            <span class="trend neutral" id="metric-active-sub">Atualizado agora</span>
+          </div>
+          <div class="metric-card">
+            <p>Negócios arquivados</p>
+            <h3 id="metric-archived">0</h3>
+            <span class="trend neutral" id="metric-archived-sub">Atualizado agora</span>
+          </div>
+          <div class="metric-card">
+            <p>Cadastros</p>
+            <h3 id="metric-registrations">0</h3>
+            <span class="trend neutral" id="metric-registrations-sub">Empresas &amp; contatos</span>
+          </div>
+        </section>
+
+        <section class="pipeline-controls">
+          <label class="switch">
+            <input type="checkbox" id="toggle-archived" />
+            <span>Mostrar negócios arquivados</span>
+          </label>
+        </section>
+
+        <main class="pipelines" id="pipelines"></main>
+      </section>
+
+      <section class="tab-content" data-tab-content="empresas">
+        <div class="registry__panel">
+          <header>
+            <div>
+              <h2>Empresas</h2>
+              <p>Cadastre e gerencie empresas vinculadas aos negócios.</p>
+            </div>
+          </header>
+          <form class="registry__form" id="company-form">
+            <input type="text" name="name" placeholder="Nome da empresa" required />
+            <input type="text" name="razaoSocial" placeholder="Razão social" />
+            <input type="text" name="cnpj" placeholder="CNPJ" />
+            <input type="text" name="nomeFantasia" placeholder="Nome fantasia" />
+            <input type="text" name="inscricaoEstadual" placeholder="Inscrição estadual" />
+            <input type="text" name="endereco" placeholder="Endereço" />
+            <input type="text" name="telefone" placeholder="Telefone" />
+            <input type="url" name="web" placeholder="Website" />
+            <input type="text" name="produtos" placeholder="Produtos" />
+            <input type="text" name="instagram" placeholder="Instagram" />
+            <input type="text" name="facebook" placeholder="Facebook" />
+            <input type="email" name="email" placeholder="Email" />
+            <input type="text" name="contatoFinanceiro" placeholder="Contato financeiro" />
+            <input type="text" name="telefoneFinanceiro" placeholder="Telefone financeiro" />
+            <input type="email" name="emailFinanceiro" placeholder="Email financeiro" />
+            <textarea name="notas" rows="4" placeholder="Notas"></textarea>
+            <button class="primary" type="submit">Adicionar empresa</button>
+          </form>
+          <ul class="registry__list" id="company-list"></ul>
+        </div>
+      </section>
+
+      <section class="tab-content" data-tab-content="contatos">
+        <div class="registry__panel">
+          <header>
+            <div>
+              <h2>Contatos</h2>
+              <p>Registre pessoas de contato para cada empresa.</p>
+            </div>
+          </header>
+          <form class="registry__form" id="contact-form">
+            <input type="text" name="name" placeholder="Nome do contato" required />
+            <input type="text" name="alcunha" placeholder="Alcunha" />
+            <input type="text" name="idioma" placeholder="Idioma" />
+            <input type="text" name="idioma2" placeholder="Idioma 2" />
+            <input type="text" name="endereco" placeholder="Endereço" />
+            <input type="email" name="email" placeholder="Email" required />
+            <input type="text" name="telefone" placeholder="Telefone" />
+            <input type="date" name="aniversario" placeholder="Aniversário" />
+            <input type="text" name="cargo" placeholder="Cargo" />
+            <input type="text" name="trafores" placeholder="Trafores" />
+            <input type="text" name="formacao" placeholder="Formação" />
+            <input type="text" name="anoFormatura" placeholder="Ano de formatura" />
+            <input type="url" name="linkedin" placeholder="LinkedIn" />
+            <select name="company" id="contact-company"></select>
+            <input type="text" name="origemContato" placeholder="Origem do contato" />
+            <textarea name="miniBio" rows="3" placeholder="Mini bio"></textarea>
+            <textarea name="interesses" rows="3" placeholder="Interesses"></textarea>
+            <textarea name="notas" rows="4" placeholder="Notas"></textarea>
+            <button class="primary" type="submit">Adicionar contato</button>
+          </form>
+          <ul class="registry__list" id="contact-list"></ul>
+        </div>
+      </section>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
